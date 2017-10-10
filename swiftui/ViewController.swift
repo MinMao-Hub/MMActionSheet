@@ -42,7 +42,6 @@ class ViewController: UIViewController {
         
         dataSource = devDatas
     }
-
 }
 
 
@@ -63,13 +62,17 @@ extension ViewController: UITableViewDelegate {
         
         
         let classNameStr:String = dataSource[indexPath.row][keyName] as! String
-        let className = Bundle.main.infoDictionary!["CFBundleName"] as! String + "." + classNameStr
         
-        let clazz:UIViewController.Type = NSClassFromString(className) as! UIViewController.Type
+        //反射类的方式
+//        let className = Bundle.main.infoDictionary!["CFBundleName"] as! String + "." + classNameStr
+//        let clazz:UIViewController.Type = NSClassFromString(className) as! UIViewController.Type
+//        let objectVc = clazz.init()
         
-        let objectVc = clazz.init()
+        //storyboard初始化方式
+        let examStoryboard = UIStoryboard.init(name: "Example", bundle: Bundle.main)
+        let objectVc = examStoryboard.instantiateViewController(withIdentifier: classNameStr)
+        
         objectVc.title = keyName
-        
         
         self.navigationController?.pushViewController(objectVc, animated: true)
     }

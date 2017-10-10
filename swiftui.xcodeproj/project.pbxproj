@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1900C6BF1F8B244B00DD81B5 /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1900C6BE1F8B244B00DD81B5 /* Macro.swift */; };
+		1986B1601F8C3F2B00CBC6AE /* Example.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1986B15F1F8C3F2B00CBC6AE /* Example.storyboard */; };
 		19A84DF81F8AF08400475BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A84DF71F8AF08400475BEB /* AppDelegate.swift */; };
 		19A84DFA1F8AF08400475BEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A84DF91F8AF08400475BEB /* ViewController.swift */; };
 		19A84DFD1F8AF08400475BEB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A84DFB1F8AF08400475BEB /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		1900C6BE1F8B244B00DD81B5 /* Macro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
+		1986B15F1F8C3F2B00CBC6AE /* Example.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Example.storyboard; sourceTree = "<group>"; };
 		19A84DF41F8AF08400475BEB /* swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A84DF71F8AF08400475BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		19A84DF91F8AF08400475BEB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -70,6 +72,7 @@
 				19C6410B1F8B4EAA005C0E3B /* Components.plist */,
 				1900C6BE1F8B244B00DD81B5 /* Macro.swift */,
 				19C6410D1F8B5B1C005C0E3B /* ExampleActionSheetVC.swift */,
+				1986B15F1F8C3F2B00CBC6AE /* Example.storyboard */,
 			);
 			path = Example;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				19A84E021F8AF08400475BEB /* LaunchScreen.storyboard in Resources */,
 				19A84DFF1F8AF08400475BEB /* Assets.xcassets in Resources */,
 				19C6410C1F8B4EAA005C0E3B /* Components.plist in Resources */,
+				1986B1601F8C3F2B00CBC6AE /* Example.storyboard in Resources */,
 				19A84DFD1F8AF08400475BEB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
