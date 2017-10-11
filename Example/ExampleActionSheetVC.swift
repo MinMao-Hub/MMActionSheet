@@ -37,7 +37,7 @@ class ExampleActionSheetVC: UIViewController {
         
         let mmActionSheet = MMActionSheet.init(title: "请选择照片", buttons: buttons, duration: nil, cancel: true)
         mmActionSheet.callBack = { (handler) ->() in
-            print(handler)
+            self.noticeOnlyText(handler)
         }
         mmActionSheet.present()
     }
@@ -68,7 +68,7 @@ class ExampleActionSheetVC: UIViewController {
         
         let mmActionSheet1 = MMActionSheet.init(title: nil, buttons: buttons, duration: nil, cancel: true)
         mmActionSheet1.callBack = { (handler) ->() in
-            print(handler)
+            self.noticeOnlyText(handler)
         }
         mmActionSheet1.present()
     }
@@ -92,7 +92,7 @@ class ExampleActionSheetVC: UIViewController {
         
         let mmActionSheet2 = MMActionSheet.init(title: nil, buttons: buttons, duration: nil, cancel: false)
         mmActionSheet2.callBack = { (handler) ->() in
-            print(handler)
+            self.noticeOnlyText(handler)
         }
         mmActionSheet2.present()
     }
@@ -112,7 +112,7 @@ class ExampleActionSheetVC: UIViewController {
         
         let mmActionSheet3 = MMActionSheet.init(title: "请选择性别", buttons: buttons, duration: nil, cancel: false)
         mmActionSheet3.callBack = { (handler) ->() in
-            print(handler)
+            self.noticeOnlyText(handler)
         }
         mmActionSheet3.present()
     }
@@ -136,7 +136,7 @@ class ExampleActionSheetVC: UIViewController {
         
         let mmActionSheet4 = MMActionSheet.init(title: "ActionSheet", buttons: buttons, duration: nil, cancel: true)
         mmActionSheet4.callBack = { (handler) ->() in
-            print(handler)
+            self.noticeOnlyText(handler)
         }
         mmActionSheet4.present()
     }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1900C6BF1F8B244B00DD81B5 /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1900C6BE1F8B244B00DD81B5 /* Macro.swift */; };
+		194CBE151F8DBA99002729E2 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194CBE141F8DB963002729E2 /* SwiftNotice.swift */; };
 		1986B1601F8C3F2B00CBC6AE /* Example.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1986B15F1F8C3F2B00CBC6AE /* Example.storyboard */; };
 		19A84DF81F8AF08400475BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A84DF71F8AF08400475BEB /* AppDelegate.swift */; };
 		19A84DFA1F8AF08400475BEB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A84DF91F8AF08400475BEB /* ViewController.swift */; };
@@ -17,7 +18,6 @@
 		19C6410C1F8B4EAA005C0E3B /* Components.plist in Resources */ = {isa = PBXBuildFile; fileRef = 19C6410B1F8B4EAA005C0E3B /* Components.plist */; };
 		19C6410E1F8B5B1C005C0E3B /* ExampleActionSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6410D1F8B5B1C005C0E3B /* ExampleActionSheetVC.swift */; };
 		19F72E811F8AF475001B1EF7 /* MMActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F72E801F8AF475001B1EF7 /* MMActionSheet.swift */; };
-		19F72E831F8AF4A6001B1EF7 /* DDBackdrop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F72E821F8AF4A6001B1EF7 /* DDBackdrop.swift */; };
 		19F72E851F8AF4B8001B1EF7 /* DDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F72E841F8AF4B8001B1EF7 /* DDButton.swift */; };
 		19F72E871F8AF4D5001B1EF7 /* DDCheckbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F72E861F8AF4D5001B1EF7 /* DDCheckbox.swift */; };
 		19F72E891F8AF4E0001B1EF7 /* DDList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F72E881F8AF4E0001B1EF7 /* DDList.swift */; };
@@ -31,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		1900C6BE1F8B244B00DD81B5 /* Macro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
+		194CBE141F8DB963002729E2 /* SwiftNotice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		1986B15F1F8C3F2B00CBC6AE /* Example.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Example.storyboard; sourceTree = "<group>"; };
 		19A84DF41F8AF08400475BEB /* swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A84DF71F8AF08400475BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -43,7 +44,6 @@
 		19C6410B1F8B4EAA005C0E3B /* Components.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Components.plist; sourceTree = "<group>"; };
 		19C6410D1F8B5B1C005C0E3B /* ExampleActionSheetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleActionSheetVC.swift; sourceTree = "<group>"; };
 		19F72E801F8AF475001B1EF7 /* MMActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMActionSheet.swift; sourceTree = "<group>"; };
-		19F72E821F8AF4A6001B1EF7 /* DDBackdrop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDBackdrop.swift; sourceTree = "<group>"; };
 		19F72E841F8AF4B8001B1EF7 /* DDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDButton.swift; sourceTree = "<group>"; };
 		19F72E861F8AF4D5001B1EF7 /* DDCheckbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDCheckbox.swift; sourceTree = "<group>"; };
 		19F72E881F8AF4E0001B1EF7 /* DDList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DDList.swift; sourceTree = "<group>"; };
@@ -77,12 +77,21 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
+		194CBE131F8DB94B002729E2 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				194CBE141F8DB963002729E2 /* SwiftNotice.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
 		19A84DEB1F8AF08400475BEB = {
 			isa = PBXGroup;
 			children = (
 				1900C6BC1F8B0E5000DD81B5 /* Example */,
 				19F72E7F1F8AF42D001B1EF7 /* Components */,
 				19A84DF61F8AF08400475BEB /* swiftui */,
+				194CBE131F8DB94B002729E2 /* Tools */,
 				19A84DF51F8AF08400475BEB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,7 +122,6 @@
 			isa = PBXGroup;
 			children = (
 				19F72E801F8AF475001B1EF7 /* MMActionSheet.swift */,
-				19F72E821F8AF4A6001B1EF7 /* DDBackdrop.swift */,
 				19F72E841F8AF4B8001B1EF7 /* DDButton.swift */,
 				19F72E861F8AF4D5001B1EF7 /* DDCheckbox.swift */,
 				19F72E881F8AF4E0001B1EF7 /* DDList.swift */,
@@ -204,7 +212,6 @@
 			files = (
 				19F72E911F8AF51B001B1EF7 /* DDSlider.swift in Sources */,
 				19F72E811F8AF475001B1EF7 /* MMActionSheet.swift in Sources */,
-				19F72E831F8AF4A6001B1EF7 /* DDBackdrop.swift in Sources */,
 				19F72E8B1F8AF4F4001B1EF7 /* DDMarquee.swift in Sources */,
 				19F72E8F1F8AF50D001B1EF7 /* DDShareSheet.swift in Sources */,
 				19F72E931F8AF527001B1EF7 /* DDTabbar.swift in Sources */,
@@ -213,6 +220,7 @@
 				1900C6BF1F8B244B00DD81B5 /* Macro.swift in Sources */,
 				19A84DFA1F8AF08400475BEB /* ViewController.swift in Sources */,
 				19F72E851F8AF4B8001B1EF7 /* DDButton.swift in Sources */,
+				194CBE151F8DBA99002729E2 /* SwiftNotice.swift in Sources */,
 				19F72E8D1F8AF500001B1EF7 /* DDMenu.swift in Sources */,
 				19F72E891F8AF4E0001B1EF7 /* DDList.swift in Sources */,
 				19C6410E1F8B5B1C005C0E3B /* ExampleActionSheetVC.swift in Sources */,
