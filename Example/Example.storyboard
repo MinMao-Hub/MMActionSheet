@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--MMSctionSheet-->
+        <!--MMActionSheet-->
         <scene sceneID="uyr-Wu-Rdi">
             <objects>
                 <viewController storyboardIdentifier="ExampleActionSheetVC" id="Mg5-44-DqH" customClass="ExampleActionSheetVC" customModule="swiftui" customModuleProvider="target" sceneMemberID="viewController">
@@ -136,7 +136,7 @@
                             <constraint firstAttribute="trailing" secondItem="n4J-v1-K9a" secondAttribute="trailing" constant="60" id="zWL-oE-WeC"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="MMSctionSheet" id="Stq-55-Upu"/>
+                    <navigationItem key="navigationItem" title="MMActionSheet" id="Stq-55-Upu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H8o-qS-anZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

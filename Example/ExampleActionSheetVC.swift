@@ -9,16 +9,8 @@
 import UIKit
 
 class ExampleActionSheetVC: UIViewController {
-
-//    var mmActionSheet:MMActionSheet! = nil
-//    var mmActionSheet1:MMActionSheet! = nil
-//    var mmActionSheet2:MMActionSheet! = nil
-//    var mmActionSheet3:MMActionSheet! = nil
-//    var mmActionSheet4:MMActionSheet! = nil
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         self.view.backgroundColor = UIColor.white
         // Do any additional setup after loading the view.
     }
