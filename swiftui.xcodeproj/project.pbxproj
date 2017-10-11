@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1900C6BF1F8B244B00DD81B5 /* Macro.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1900C6BE1F8B244B00DD81B5 /* Macro.swift */; };
 		194CBE151F8DBA99002729E2 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194CBE141F8DB963002729E2 /* SwiftNotice.swift */; };
 		1986B1601F8C3F2B00CBC6AE /* Example.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1986B15F1F8C3F2B00CBC6AE /* Example.storyboard */; };
 		19A84DF81F8AF08400475BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A84DF71F8AF08400475BEB /* AppDelegate.swift */; };
@@ -19,7 +18,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1900C6BE1F8B244B00DD81B5 /* Macro.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macro.swift; sourceTree = "<group>"; };
 		194CBE141F8DB963002729E2 /* SwiftNotice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		1986B15F1F8C3F2B00CBC6AE /* Example.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Example.storyboard; sourceTree = "<group>"; };
 		19A84DF41F8AF08400475BEB /* swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftui.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -46,7 +44,6 @@
 		1900C6BC1F8B0E5000DD81B5 /* Example */ = {
 			isa = PBXGroup;
 			children = (
-				1900C6BE1F8B244B00DD81B5 /* Macro.swift */,
 				19C6410D1F8B5B1C005C0E3B /* ExampleActionSheetVC.swift */,
 				1986B15F1F8C3F2B00CBC6AE /* Example.storyboard */,
 			);
@@ -175,7 +172,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				19F72E811F8AF475001B1EF7 /* MMActionSheet.swift in Sources */,
-				1900C6BF1F8B244B00DD81B5 /* Macro.swift in Sources */,
 				19F72E851F8AF4B8001B1EF7 /* MMButton.swift in Sources */,
 				194CBE151F8DBA99002729E2 /* SwiftNotice.swift in Sources */,
 				19C6410E1F8B5B1C005C0E3B /* ExampleActionSheetVC.swift in Sources */,
