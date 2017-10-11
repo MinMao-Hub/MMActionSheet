@@ -112,7 +112,7 @@ class MMActionSheet: UIView {
             
             let origin_y = tHeight + buttonHeight * CGFloat(index) + divideLineHeight * CGFloat(index)
             
-            let button = DDButton.init(type: .custom)
+            let button = MMButton.init(type: .custom)
             button.frame = CGRect.init(x: 0.0, y: origin_y, width: screenWidth, height: buttonHeight)
             if #available(iOS 8.2, *) {
                 button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
@@ -141,7 +141,7 @@ class MMActionSheet: UIView {
         
         //如果取消为ture则添加取消按钮
         if self.cancel == true {
-            let button = DDButton.init(type: .custom)
+            let button = MMButton.init(type: .custom)
             button.frame = CGRect.init(x: 0, y: Int(self.actionSheetView.bounds.size.height - buttonHeight), width: Int(screenWidth), height: Int(buttonHeight))
             if #available(iOS 8.2, *) {
                 button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
@@ -160,7 +160,7 @@ class MMActionSheet: UIView {
         
     }
     
-    @objc func actionClick(button:DDButton) {
+    @objc func actionClick(button:MMButton) {
         self.dismiss()
         if (self.callBack != nil) {
             self.callBack!(button.handler!)

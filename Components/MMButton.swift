@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DDButton: UIButton {
+class MMButton: UIButton {
     
     var handler: String?
     override init(frame: CGRect) {
