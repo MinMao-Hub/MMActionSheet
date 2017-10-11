@@ -171,7 +171,7 @@ class SwiftNotice: NSObject {
                 iv.contentMode = UIViewContentMode.scaleAspectFit
                 mainView.addSubview(iv)
                 timer = DispatchSource.makeTimerSource(flags: DispatchSource.TimerFlags(rawValue: UInt(0)), queue: DispatchQueue.main) as! DispatchSource
-                timer.scheduleRepeating(deadline: DispatchTime.now(), interval: DispatchTimeInterval.milliseconds(timeInterval))
+                timer.schedule(deadline: DispatchTime.now(), repeating: DispatchTimeInterval.milliseconds(timeInterval))
                 timer.setEventHandler(handler: { () -> Void in
                     let name = imageNames[timerTimes % imageNames.count]
                     iv.image = name
@@ -315,7 +315,7 @@ class SwiftNotice: NSObject {
     }
   
     // fix https://github.com/johnlui/SwiftNotice/issues/2
-    static func hideNotice(_ sender: AnyObject) {
+    @objc static func hideNotice(_ sender: AnyObject) {
         if let window = sender as? UIWindow {
           
           if let v = window.subviews.first {

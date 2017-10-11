@@ -160,14 +160,14 @@ class MMActionSheet: UIView {
         
     }
     
-    func actionClick(button:DDButton) {
+    @objc func actionClick(button:DDButton) {
         self.dismiss()
         if (self.callBack != nil) {
             self.callBack!(button.handler!)
         }
     }
     
-    func singleTapDismiss() {
+    @objc func singleTapDismiss() {
 //        点击背景屏幕不取消
 //        if self.cancel == false {
 //            return
