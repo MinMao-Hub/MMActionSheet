@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="MMActionSheet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uue-LH-JAv">
-                                <rect key="frame" x="38" y="242" width="298" height="81"/>
+                                <rect key="frame" x="57" y="242" width="260.5" height="81"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="81" id="xpI-gX-fz0"/>
                                 </constraints>
@@ -38,8 +38,7 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="Uue-LH-JAv" secondAttribute="trailing" constant="39" id="UyF-Ef-IVM"/>
-                            <constraint firstItem="Uue-LH-JAv" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" constant="38" id="WfQ-9n-S57"/>
+                            <constraint firstItem="Uue-LH-JAv" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="JhF-4r-SOr"/>
                             <constraint firstItem="Uue-LH-JAv" firstAttribute="top" secondItem="Llm-lL-Icb" secondAttribute="bottom" constant="222" id="yeS-Bi-Vpf"/>
                         </constraints>
                     </view>
