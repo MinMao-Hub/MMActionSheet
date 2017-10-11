@@ -16,7 +16,9 @@ MMActionSheet is an simple pop-up selection box(ActionSheet) written in pure Swi
 
 ### Installation
 
-Just clone and add `MMActionSheet.swift` and `MMButton.swift` to your project.
+克隆代码，然后将components文件夹下面的两个文件 `MMActionSheet.swift` 和 `MMButton.swift`加入到你的项目中即可
+
+Just clone and add `MMActionSheet.swift`, `MMButton.swift` to your project.
 
 ### Example
 
