@@ -134,7 +134,7 @@ class ExampleActionSheetVC: UIViewController {
             ]
         ]
         
-        let mmActionSheet4 = MMActionSheet.init(title: "ActionSheet", buttons: buttons, duration: nil, cancel: true)
+        let mmActionSheet4 = MMActionSheet.init(title: "文件管理", buttons: buttons, duration: nil, cancel: true)
         mmActionSheet4.callBack = { (handler) ->() in
             self.noticeOnlyText(handler)
         }
