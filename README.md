@@ -34,13 +34,13 @@ Just clone and add `MMActionSheet.swift`, `MMButton.swift` to your project.
 >>目前仅支持三种(`default`,`blue`,`danger`)
 
 <div>
-	<img src="./gifs/mmactionsheet1.gif" width="25%" />
-	<img src="./gifs/mmactionsheet2.gif" width="25%" style="margin-left:5%" />
-	<img src="./gifs/mmactionsheet3.gif" width="25%" style="margin-left:5%" />
+	<img src="https://github.com/MinMao-Hub/MMActionSheet/blob/master/gifs/mmactionsheet1.gif" width="25%" />
+	<img src="https://github.com/MinMao-Hub/MMActionSheet/blob/master/gifs/mmactionsheet2.gif" width="25%" style="margin-left:5%" />
+	<img src="https://github.com/MinMao-Hub/MMActionSheet/blob/master/gifs/mmactionsheet3.gif" width="25%" style="margin-left:5%" />
 </div>
 <div style="margin-top: 30px">
-	<img src="./gifs/mmactionsheet4.gif" width="25%" />
-	<img src="./gifs/mmactionsheet5.gif" width="25%" style="margin-left:5%" />
+	<img src="https://github.com/MinMao-Hub/MMActionSheet/blob/master/gifs/mmactionsheet4.gif" width="25%" />
+	<img src="https://github.com/MinMao-Hub/MMActionSheet/blob/master/gifs/mmactionsheet5.gif" width="25%" style="margin-left:5%" />
 </div>
 
 
@@ -65,7 +65,7 @@ mmActionSheet.present()
 
 ```
 
-***PS:***注释
+*PS:注释*
 
 * create actionsheet && init 【创建并初始化】
 
@@ -95,7 +95,7 @@ mmActionSheet.callBack = { (handler) ->() in
 	print(handler)
 }
 ```
-	* `handler` 该handler即为buttons里面button的`handler`，对应的回调过来
+ `handler` 该handler即为buttons里面button的`handler`，对应的回调过来
 
 * present【弹出actionsheet】
 
