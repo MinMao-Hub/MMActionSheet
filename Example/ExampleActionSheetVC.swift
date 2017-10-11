@@ -10,11 +10,11 @@ import UIKit
 
 class ExampleActionSheetVC: UIViewController {
 
-    var mmActionSheet:MMActionSheet! = nil
-    var mmActionSheet1:MMActionSheet! = nil
-    var mmActionSheet2:MMActionSheet! = nil
-    var mmActionSheet3:MMActionSheet! = nil
-    var mmActionSheet4:MMActionSheet! = nil
+//    var mmActionSheet:MMActionSheet! = nil
+//    var mmActionSheet1:MMActionSheet! = nil
+//    var mmActionSheet2:MMActionSheet! = nil
+//    var mmActionSheet3:MMActionSheet! = nil
+//    var mmActionSheet4:MMActionSheet! = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,11 +31,11 @@ class ExampleActionSheetVC: UIViewController {
             ],[
                 "title": "相册",
                 "handler": "photos",
-                "color": "default"
+                "type": "default"
             ]
         ]
         
-        mmActionSheet = MMActionSheet.init(title: "请选择照片", buttons: buttons, duration: nil, cancel: true)
+        let mmActionSheet = MMActionSheet.init(title: "请选择照片", buttons: buttons, duration: nil, cancel: true)
         mmActionSheet.callBack = { (handler) ->() in
             print(handler)
         }
@@ -50,7 +50,7 @@ class ExampleActionSheetVC: UIViewController {
             ],[
                 "title": "收藏",
                 "handler": "collection",
-                "color": "default"
+                "type": "default"
             ],[
                 "title": "保存图片",
                 "handler": "save",
@@ -66,7 +66,7 @@ class ExampleActionSheetVC: UIViewController {
             ]
         ]
         
-        mmActionSheet1 = MMActionSheet.init(title: nil, buttons: buttons, duration: nil, cancel: true)
+        let mmActionSheet1 = MMActionSheet.init(title: nil, buttons: buttons, duration: nil, cancel: true)
         mmActionSheet1.callBack = { (handler) ->() in
             print(handler)
         }
@@ -90,7 +90,7 @@ class ExampleActionSheetVC: UIViewController {
             ]
         ]
         
-        mmActionSheet2 = MMActionSheet.init(title: nil, buttons: buttons, duration: nil, cancel: false)
+        let mmActionSheet2 = MMActionSheet.init(title: nil, buttons: buttons, duration: nil, cancel: false)
         mmActionSheet2.callBack = { (handler) ->() in
             print(handler)
         }
@@ -102,15 +102,15 @@ class ExampleActionSheetVC: UIViewController {
             [
                 "title": "男",
                 "handler": "男",
-                "color": "blue"
+                "type": "blue"
             ],[
                 "title": "女",
                 "handler": "女",
-                "color": "danger"
+                "type": "danger"
             ]
         ]
         
-        mmActionSheet3 = MMActionSheet.init(title: "请选择性别", buttons: buttons, duration: nil, cancel: false)
+        let mmActionSheet3 = MMActionSheet.init(title: "请选择性别", buttons: buttons, duration: nil, cancel: false)
         mmActionSheet3.callBack = { (handler) ->() in
             print(handler)
         }
@@ -122,19 +122,19 @@ class ExampleActionSheetVC: UIViewController {
             [
                 "title": "查看",
                 "handler": "check",
-                "color": "default"
+                "type": "default"
             ],[
                 "title": "编辑",
                 "handler": "edit",
-                "color": "blue"
+                "type": "blue"
             ],[
                 "title": "删除",
                 "handler": "delete",
-                "color": "danger"
+                "type": "danger"
             ]
         ]
         
-        mmActionSheet4 = MMActionSheet.init(title: "ActionSheet", buttons: buttons, duration: nil, cancel: true)
+        let mmActionSheet4 = MMActionSheet.init(title: "ActionSheet", buttons: buttons, duration: nil, cancel: true)
         mmActionSheet4.callBack = { (handler) ->() in
             print(handler)
         }

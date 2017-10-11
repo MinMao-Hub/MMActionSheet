@@ -17,7 +17,7 @@ let screenHeight = screenSize.height                 /* 屏幕高度 */
 let buttonHeight:CGFloat = 48.0 * screenWidth / 375  /* button高度 */
 let titleHeight:CGFloat = 40.0 * screenWidth / 375   /* 标题的高度 */
 let btnPadding:CGFloat = 5 * screenWidth / 375       /* 取消按钮与其他按钮之间的间距 */
-let defaultDuration = 0.4
+let defaultDuration = 0.3
 
 
 typealias actionClickBlock = (String) ->()
@@ -55,7 +55,8 @@ class MMActionSheet: UIView {
         self.init(frame: screenBounds)
         self.title = title ?? ""
         self.buttons = buttons ?? []
-        self.duration = duration ?? defaultDuration
+        let btnCount = self.buttons?.count ?? 0
+        self.duration = duration ?? (defaultDuration + defaultDuration * Double(btnCount/30))
         self.cancel = cancel ?? true
         //添加单击事件，隐藏sheet
         let singleTap = UITapGestureRecognizer.init(target: self, action: #selector(self.singleTapDismiss))
@@ -121,7 +122,7 @@ class MMActionSheet: UIView {
             button.handler = btn["handler"]
             button.setTitle(btn["title"], for: .normal)
             var titleColor:UIColor = UIColor(red: 0.000, green: 0.000, blue: 0.004, alpha: 1.00)
-            switch(btn["color"]) {
+            switch(btn["type"]) {
             case "blue"?:
                 titleColor = UIColor(red: 0.082, green: 0.494, blue: 0.984, alpha: 1.00)
                 break
