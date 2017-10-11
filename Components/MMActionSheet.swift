@@ -19,25 +19,24 @@ let mmtitleHeight:CGFloat = 40.0 * mmscreenWidth / 375   /* 标题的高度 */
 let mmbtnPadding:CGFloat = 5 * mmscreenWidth / 375       /* 取消按钮与其他按钮之间的间距 */
 let mmdefaultDuration = 0.3
 
+public typealias actionClickBlock = (String) ->()
 
-typealias actionClickBlock = (String) ->()
-
-class MMActionSheet: UIView {
-    
+public class MMActionSheet: UIView {
     var title:String?     //标题
     var buttons:Array<Dictionary<String, String>>?    //按钮组
     var duration: Double?  //动画时长
     var cancel: Bool?     //是否需要取消按钮
     
     var actionSheetHeight:CGFloat = 0
-    var actionSheetView:UIView = UIView()
-    var callBack:actionClickBlock?
+    public var actionSheetView:UIView = UIView()
+    
+    public var callBack:actionClickBlock?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    required public init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
@@ -49,7 +48,7 @@ class MMActionSheet: UIView {
     ///   - buttons: 按钮数组
     ///   - duration: 动画时长
     ///   - cancel: 是否需要取消按钮
-    convenience init(title: String?, buttons: Array<Dictionary<String, String>>?, duration: Double?, cancel: Bool?) {
+    convenience public init(title: String?, buttons: Array<Dictionary<String, String>>?, duration: Double?, cancel: Bool?) {
         
         //半透明背景
         self.init(frame: mmscreenBounds)
@@ -168,10 +167,10 @@ class MMActionSheet: UIView {
     }
     
     @objc func singleTapDismiss() {
-//        点击背景屏幕不取消
-//        if self.cancel == false {
-//            return
-//        }
+        //        点击背景屏幕不取消
+        //        if self.cancel == false {
+        //            return
+        //        }
         self.dismiss()
         if (self.callBack != nil) {
             self.callBack!("cancel")
@@ -179,7 +178,7 @@ class MMActionSheet: UIView {
     }
     
     /// 显示
-    func present() {
+    public func present() {
         UIView.animate(withDuration: 0.1, animations: {
             UIApplication.shared.keyWindow?.addSubview(self)
             self.actionSheetView.backgroundColor = UIColor(red: 0.937, green: 0.937, blue: 0.941, alpha: 0.90).withAlphaComponent(0.9)
@@ -207,7 +206,7 @@ class MMActionSheet: UIView {
     }
     
     /// 修改样式
-    override func layoutSubviews() {
+    override public func layoutSubviews() {
         super.layoutSubviews()
         self.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
         self.actionSheetView.backgroundColor = UIColor(red: 0.937, green: 0.937, blue: 0.941, alpha: 0.90).withAlphaComponent(0.9)
@@ -226,10 +225,11 @@ class MMActionSheet: UIView {
 }
 
 extension MMActionSheet: UIGestureRecognizerDelegate {
-    func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
+    public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         if touch.view == self.actionSheetView {
             return false
         }
         return true
     }
 }
+

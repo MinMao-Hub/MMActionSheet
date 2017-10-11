@@ -17,7 +17,15 @@ MMActionSheet is an simple pop-up selection box(ActionSheet) written in pure Swi
 
 ### Installation
 
-克隆代码，然后将components文件夹下面的两个文件 `MMActionSheet.swift` 和 `MMButton.swift`加入到你的项目中即可
+#### ① Cocoapods
+
+* `pod 'MMActionSheet', '~> 0.0.5'`
+* `import MMActionSheet `  in you code
+
+
+#### ② Copy code into project
+
+克隆代码，然后将components文件夹下面的两个文件 `MMActionSheet.swift` 和 `MMButton.swift`加入到你的项目中即可。	
 
 Just clone and add `MMActionSheet.swift`, `MMButton.swift` to your project.
 
@@ -59,7 +67,7 @@ let buttons = [
 ] 
 let mmActionSheet = MMActionSheet.init(title: "请选择照片", buttons: buttons, duration: nil, cancel: true)
 mmActionSheet.callBack = { (handler) ->() in
-    self.noticeOnlyText(handler)
+    print(handler)
 }
 mmActionSheet.present()
 
