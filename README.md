@@ -43,13 +43,13 @@ Just clone and add `MMActionSheet.swift`, `MMButton.swift` to your project.
 >>目前仅支持三种(`default`,`blue`,`danger`)
 
 <div>
-	<img src="http://img.blog.csdn.net/20171012003159177?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMjk4ODU5MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="25%" />
-	<img src="http://img.blog.csdn.net/20171012003436706?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMjk4ODU5MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="25%" style="margin-left:5%" />
-	<img src="http://img.blog.csdn.net/20171012003516961?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMjk4ODU5MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="25%" style="margin-left:5%" />
+	<img src="gifs/mmactionsheet1.gif" width="25%" />
+	<img src="gifs/mmactionsheet2.gif" width="25%" style="margin-left:5%" />
+	<img src="gifs/mmactionsheet3.gif" width="25%" style="margin-left:5%" />
 </div>
 <div style="margin-top: 30px">
-	<img src="http://img.blog.csdn.net/20171012003536637?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMjk4ODU5MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="25%" />
-	<img src="http://img.blog.csdn.net/20171012003601882?watermark/2/text/aHR0cDovL2Jsb2cuY3Nkbi5uZXQvdTAxMjk4ODU5MQ==/font/5a6L5L2T/fontsize/400/fill/I0JBQkFCMA==/dissolve/70/gravity/SouthEast" width="25%" style="margin-left:5%" />
+	<img src="gifs/mmactionsheet4.gif" width="25%" />
+	<img src="gifs/mmactionsheet5.gif" width="25%" style="margin-left:5%" />
 </div>
 
 
