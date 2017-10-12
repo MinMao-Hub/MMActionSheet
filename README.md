@@ -25,7 +25,7 @@ MMActionSheet is an simple pop-up selection box(ActionSheet) written in pure Swi
 
 #### Install with  Cocoapods
 
-* `pod 'MMActionSheet', '~> 1.0.0'`
+* `pod 'MMActionSheet', '~> 1.0'`
 * `import MMActionSheet `  in you code
 
 
@@ -48,13 +48,13 @@ Just clone and add `MMActionSheet.swift`, `MMButton.swift` to your project.
 >>目前仅支持三种(`default`,`blue`,`danger`)
 
 <div>
-	<img src="gifs/mmactionsheet1.gif" width="25%" />
-	<img src="gifs/mmactionsheet2.gif" width="25%" style="margin-left:5%" />
-	<img src="gifs/mmactionsheet3.gif" width="25%" style="margin-left:5%" />
+	<img src="gifs/mmactionsheet_1.gif" width="25%" />
+	<img src="gifs/mmactionsheet_2.gif" width="25%" style="margin-left:20px" />
+	<img src="gifs/mmactionsheet_3.gif" width="25%" style="margin-left:20px" />
 </div>
 <div style="margin-top: 30px">
-	<img src="gifs/mmactionsheet4.gif" width="25%" />
-	<img src="gifs/mmactionsheet5.gif" width="25%" style="margin-left:5%" />
+	<img src="gifs/mmactionsheet_4.gif" width="25%" />
+	<img src="gifs/mmactionsheet_5.gif" width="25%" style="margin-left:20px" />
 </div>
 
 
