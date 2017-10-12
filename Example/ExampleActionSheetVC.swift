@@ -26,8 +26,11 @@ class ExampleActionSheetVC: UIViewController {
                 "type": "default"
             ]
         ]
+        let cancelBtn = [
+            "title": "取消",
+        ]
         
-        let mmActionSheet = MMActionSheet.init(title: "请选择照片", buttons: buttons, duration: nil, cancel: true)
+        let mmActionSheet = MMActionSheet.init(title: "请选择照片", buttons: buttons, duration: nil, cancelBtn: cancelBtn)
         mmActionSheet.callBack = { (handler) ->() in
             self.noticeOnlyText(handler)
         }
@@ -58,7 +61,11 @@ class ExampleActionSheetVC: UIViewController {
             ]
         ]
         
-        let mmActionSheet1 = MMActionSheet.init(title: nil, buttons: buttons, duration: nil, cancel: true)
+        let cancelBtn = [
+            "title": "取消",
+            "handler": "cancel",
+        ]
+        let mmActionSheet1 = MMActionSheet.init(title: nil, buttons: buttons, duration: nil, cancelBtn: cancelBtn)
         mmActionSheet1.callBack = { (handler) ->() in
             self.noticeOnlyText(handler)
         }
@@ -82,7 +89,7 @@ class ExampleActionSheetVC: UIViewController {
             ]
         ]
         
-        let mmActionSheet2 = MMActionSheet.init(title: nil, buttons: buttons, duration: nil, cancel: false)
+        let mmActionSheet2 = MMActionSheet.init(title: nil, buttons: buttons, duration: nil, cancelBtn: nil)
         mmActionSheet2.callBack = { (handler) ->() in
             self.noticeOnlyText(handler)
         }
@@ -102,7 +109,7 @@ class ExampleActionSheetVC: UIViewController {
             ]
         ]
         
-        let mmActionSheet3 = MMActionSheet.init(title: "请选择性别", buttons: buttons, duration: nil, cancel: false)
+        let mmActionSheet3 = MMActionSheet.init(title: "请选择性别", buttons: buttons, duration: nil, cancelBtn: nil)
         mmActionSheet3.callBack = { (handler) ->() in
             self.noticeOnlyText(handler)
         }
@@ -125,8 +132,13 @@ class ExampleActionSheetVC: UIViewController {
                 "type": "danger"
             ]
         ]
+        let cancelBtn = [
+            "title": "返回",
+            "handler": "back",
+            "type": "blue"
+        ]
         
-        let mmActionSheet4 = MMActionSheet.init(title: "文件管理", buttons: buttons, duration: nil, cancel: true)
+        let mmActionSheet4 = MMActionSheet.init(title: "文件管理", buttons: buttons, duration: nil, cancelBtn: cancelBtn)
         mmActionSheet4.callBack = { (handler) ->() in
             self.noticeOnlyText(handler)
         }

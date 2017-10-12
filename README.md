@@ -71,7 +71,10 @@ let buttons = [
         "type": "default"
     ]
 ] 
-let mmActionSheet = MMActionSheet.init(title: "请选择照片", buttons: buttons, duration: nil, cancel: true)
+let cancelBtn = [
+    "title": "取消",
+]
+let mmActionSheet = MMActionSheet.init(title: "请选择照片", buttons: buttons, duration: nil, cancelBtn: cancelBtn)
 mmActionSheet.callBack = { (handler) ->() in
     print(handler)
 }
@@ -101,7 +104,8 @@ mmActionSheet.present()
 		* `handler` 按钮事件唯一标识，回调的时候根据该值区别处理事件
 		* `type`    按钮类型（展示不同的标题颜色）【`default`,`blue`,`danger`】
 	* `duration ` 动画时长
-	* `cancel `   是否需要取消按钮
+	* `cancelBtn `   取消按钮属性，属性跟上述buttons内部button属性一致；若设置为`nil`则无该按钮, 必须要设置某一个属性，默认值为`[
+    "title": "取消", "handler": "cancel","type": "default"]`
 * callback【回调】
 
 ```

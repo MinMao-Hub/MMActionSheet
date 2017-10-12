@@ -25,7 +25,7 @@ public class MMActionSheet: UIView {
     var title:String?     //标题
     var buttons:Array<Dictionary<String, String>>?    //按钮组
     var duration: Double?  //动画时长
-    var cancel: Bool?     //是否需要取消按钮
+    var cancelButton: Dictionary<String, String>?     //取消按钮
     
     var actionSheetHeight:CGFloat = 0
     public var actionSheetView:UIView = UIView()
@@ -48,7 +48,7 @@ public class MMActionSheet: UIView {
     ///   - buttons: 按钮数组
     ///   - duration: 动画时长
     ///   - cancel: 是否需要取消按钮
-    convenience public init(title: String?, buttons: Array<Dictionary<String, String>>?, duration: Double?, cancel: Bool?) {
+    convenience public init(title: String?, buttons: Array<Dictionary<String, String>>?, duration: Double?, cancelBtn: Dictionary<String, String>?) {
         
         //半透明背景
         self.init(frame: mmscreenBounds)
@@ -56,7 +56,7 @@ public class MMActionSheet: UIView {
         self.buttons = buttons ?? []
         let btnCount = self.buttons?.count ?? 0
         self.duration = duration ?? (mmdefaultDuration + mmdefaultDuration * Double(btnCount/30))
-        self.cancel = cancel ?? true
+        self.cancelButton = cancelBtn ?? [:]
         //添加单击事件，隐藏sheet
         let singleTap = UITapGestureRecognizer.init(target: self, action: #selector(self.singleTapDismiss))
         singleTap.delegate = self
@@ -76,7 +76,7 @@ public class MMActionSheet: UIView {
         }
         
         var cancelHeight:CGFloat = 0.0
-        if self.cancel == true {
+        if self.cancelButton! != [:] {
             cancelHeight = mmbuttonHeight + mmbtnPadding
         }
         
@@ -139,7 +139,7 @@ public class MMActionSheet: UIView {
         }
         
         //如果取消为ture则添加取消按钮
-        if self.cancel == true {
+        if self.cancelButton! != [:] {
             let button = MMButton.init(type: .custom)
             button.frame = CGRect.init(x: 0, y: Int(self.actionSheetView.bounds.size.height - mmbuttonHeight), width: Int(mmscreenWidth), height: Int(mmbuttonHeight))
             if #available(iOS 8.2, *) {
@@ -147,9 +147,20 @@ public class MMActionSheet: UIView {
             } else {
                 // Fallback on earlier versions
             }
-            button.handler = "cancel"
-            button.setTitle("取消", for: .normal)
-            button.setTitleColor(UIColor(red: 0.000, green: 0.000, blue: 0.004, alpha: 1.00), for: .normal)
+            button.handler = self.cancelButton?["handler"] ?? "cancel"
+            button.setTitle(self.cancelButton?["title"] ?? "取消", for: .normal)
+            var titleColor:UIColor = UIColor(red: 0.000, green: 0.000, blue: 0.004, alpha: 1.00)
+            switch(self.cancelButton!["type"]) {
+            case "blue"?:
+                titleColor = UIColor(red: 0.082, green: 0.494, blue: 0.984, alpha: 1.00)
+                break
+            case "danger"?:
+                titleColor = UIColor.red
+                break
+            default:
+                titleColor = UIColor(red: 0.000, green: 0.000, blue: 0.004, alpha: 1.00)
+            }
+            button.setTitleColor(titleColor, for: .normal)
             button.setBackgroundImage(self.imageWithColor(color: UIColor(red: 1.000, green: 1.000, blue: 1.000, alpha: 0.80), size: button.bounds.size), for: .normal)
             button.setBackgroundImage(self.imageWithColor(color: UIColor(red: 0.780, green: 0.733, blue: 0.745, alpha: 0.80), size: button.bounds.size), for: .highlighted)
             button.addTarget(self, action: #selector(self.actionClick), for: .touchUpInside)
