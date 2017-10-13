@@ -178,10 +178,6 @@ public class MMActionSheet: UIView {
     }
     
     @objc func singleTapDismiss() {
-        //        点击背景屏幕不取消
-        //        if self.cancel == false {
-        //            return
-        //        }
         self.dismiss()
         if (self.callBack != nil) {
             self.callBack!("cancel")

@@ -86,7 +86,7 @@ mmActionSheet.present()
 
 * create actionsheet && init 【创建并初始化】
 
-`MMActionSheet.init(title: "请选择照片", buttons: buttons, duration: nil, cancel: true)`
+`MMActionSheet.init(title: "请选择照片", buttons: buttons, duration: nil, cancelBtn: cancelBtn)`
 
 * argument【参数描述】
  
