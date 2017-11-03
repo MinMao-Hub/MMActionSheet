@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "MMActionSheet"
-  s.version      = "1.0.2"
+  s.version      = "1.0.3"
   s.summary      = "MMActionSheet is an simple pop-up selection box(ActionSheet) written in pure Swift"
   s.homepage     = "https://github.com/MinMao-Hub"
   s.license      = "MIT"
