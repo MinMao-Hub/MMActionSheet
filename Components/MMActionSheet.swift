@@ -27,6 +27,9 @@ public class MMActionSheet: UIView {
     var duration: Double?  //动画时长
     var cancelButton: Dictionary<String, String>?     //取消按钮
     
+    //适配iphoneX
+    var paddng_bottom:CGFloat = mmscreenHeight == 812.0 ? 34.0 : 0.0
+    
     var actionSheetHeight:CGFloat = 0
     public var actionSheetView:UIView = UIView()
     
@@ -80,7 +83,7 @@ public class MMActionSheet: UIView {
             cancelHeight = mmbuttonHeight + mmbtnPadding
         }
         
-        actionSheetHeight = CGFloat(btnCount) * mmbuttonHeight + tHeight + cancelHeight + CGFloat(btnCount) * mmdivideLineHeight
+        actionSheetHeight = CGFloat(btnCount) * mmbuttonHeight + tHeight + cancelHeight + CGFloat(btnCount) * mmdivideLineHeight + paddng_bottom
         let aFrame:CGRect = CGRect.init(x: 0, y: mmscreenHeight, width: mmscreenWidth, height: actionSheetHeight)
         self.actionSheetView.frame = aFrame
         self.addSubview(self.actionSheetView)
@@ -141,7 +144,7 @@ public class MMActionSheet: UIView {
         //如果取消为ture则添加取消按钮
         if self.cancelButton! != [:] {
             let button = MMButton.init(type: .custom)
-            button.frame = CGRect.init(x: 0, y: Int(self.actionSheetView.bounds.size.height - mmbuttonHeight), width: Int(mmscreenWidth), height: Int(mmbuttonHeight))
+            button.frame = CGRect.init(x: 0, y: Int(self.actionSheetView.bounds.size.height - mmbuttonHeight - paddng_bottom), width: Int(mmscreenWidth), height: Int(mmbuttonHeight))
             if #available(iOS 8.2, *) {
                 button.titleLabel?.font = UIFont.systemFont(ofSize: 16)
             } else {
