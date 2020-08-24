@@ -121,10 +121,6 @@ mmActionSheet.callBack = { (handler) ->() in
 `mmActionSheet.present()`
 
 
-### Other
-
-另外介绍一套由我朋友开发的组件库[keeponrunning/wxui](https://github.com/keeponrunning/wxui), 该组件库基于阿里weex开发，轻量、简单、易集成；里面包含丰富的常用组件，完美适配android和iOS，使用weex开发的朋友们多多关注哈，喜欢的朋友添加QQ群(710853476)讨论【群里有web前端大神支持哦😯】。
-
 ### Contribution
 
 You are welcome to fork and submit pull requests.
