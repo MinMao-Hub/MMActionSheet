@@ -106,13 +106,13 @@ public class MMActionSheet: UIView {
             cancelHeight = Constants.mmbuttonHeight + Constants.mmbtnPadding
         }
 
-        let itemHeight = CGFloat(btnCount) * Constants.mmbuttonHeight + CGFloat(btnCount) * Constants.mmdivideLineHeight + Constants.paddng_bottom
+        let itemHeight = CGFloat(btnCount) * Constants.mmbuttonHeight + CGFloat(btnCount) * Constants.mmdivideLineHeight + Constants.paddng_bottom + tHeight
         let height = min(itemHeight, Constants.mmmaxHeight)
 
         scrollView.frame = CGRect(x: 0, y: 0, width: Constants.mmscreenWidth, height: height)
         actionSheetView.addSubview(scrollView)
 
-        actionSheetHeight = height + tHeight + cancelHeight
+        actionSheetHeight = height + cancelHeight
 
         let aFrame: CGRect = CGRect(x: 0, y: Constants.mmscreenHeight, width: Constants.mmscreenWidth, height: actionSheetHeight)
         actionSheetView.frame = aFrame
@@ -129,6 +129,8 @@ public class MMActionSheet: UIView {
         setButtons()
         /// Cancel Button
         setCancelButton()
+        /// setExtraView
+        setExtraView()
     }
 
     /// Title
@@ -147,7 +149,7 @@ public class MMActionSheet: UIView {
 
     /// Buttons
     private func setButtons() {
-        let itemHeight = CGFloat(buttons.count) * Constants.mmbuttonHeight + CGFloat(buttons.count) * Constants.mmdivideLineHeight + Constants.paddng_bottom
+        let itemHeight = CGFloat(buttons.count) * Constants.mmbuttonHeight + CGFloat(buttons.count) * Constants.mmdivideLineHeight + Constants.paddng_bottom + (title != nil ? Constants.mmtitleHeight : 0)
         let view = UIView(frame: CGRect(x: 0, y: 0, width: Constants.mmscreenWidth, height: itemHeight))
         scrollView.addSubview(view)
         scrollView.contentSize = CGSize(width: Constants.mmscreenWidth, height: itemHeight)
@@ -170,6 +172,21 @@ public class MMActionSheet: UIView {
             button.addTarget(self, action: #selector(actionClick), for: .touchUpInside)
             view.addSubview(button)
         }
+    }
+
+    /// ExtraView
+    private func setExtraView() {
+        guard MMTools.isIphoneX else { return }
+        let frame = CGRect(x: 0, y: Int(self.actionSheetView.bounds.size.height - Constants.mmbuttonHeight - Constants.paddng_bottom + Constants.mmbuttonHeight), width: Int(Constants.mmscreenWidth), height: Int(Constants.paddng_bottom) + 10)
+        let extraView = UIView()
+        extraView.frame = frame
+        if cancelButton != nil {
+            extraView.backgroundColor = cancelButton?.backgroudImageColorNormal?.rawValue
+        } else {
+            let bgColor = buttons.first?.backgroudImageColorNormal?.rawValue
+            extraView.backgroundColor = bgColor
+        }
+        self.actionSheetView.addSubview(extraView)
     }
 
     /// Cancel Button
