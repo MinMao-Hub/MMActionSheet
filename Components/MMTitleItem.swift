@@ -17,14 +17,19 @@ public struct MMTitleItem {
     public var textFont: UIFont? = .systemFont(ofSize: 14.0)
     /// textAlignment
     public var textAlignment: NSTextAlignment? = .center
+    /// backgroundColor
+    public var backgroundColor: MMButtonTitleColor? = .custom(UIColor.clear)
 
     public init(title: String?,
                 titleColor: UIColor?,
                 titleFont: UIFont? = .systemFont(ofSize: 14.0),
-                textAlignment: NSTextAlignment? = .center) {
+                textAlignment: NSTextAlignment? = .center,
+                backgroundColor: MMButtonTitleColor? = .custom(UIColor.clear)
+    ) {
         self.text = title
         self.textColor = titleColor
         self.textFont = titleFont
         self.textAlignment = textAlignment
+        self.backgroundColor = backgroundColor ?? .custom(UIColor.clear)
     }
 }

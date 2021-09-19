@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vz1-cj-glk">
-    <device id="retina4_7" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="vz1-cj-glk">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -21,14 +20,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uwf-rG-1t3">
-                                <rect key="frame" x="60" y="124" width="255" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uwf-rG-1t3">
+                                <rect key="frame" x="60" y="64" width="255" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.10759859770000001" blue="0.4354100695" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="8ay-44-LHn"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="show(有标题有取消)">
+                                <state key="normal" title="有标题有取消">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -40,14 +39,14 @@
                                     <action selector="presentActionSheet:" destination="Mg5-44-DqH" eventType="touchUpInside" id="JtC-KU-bzu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4J-v1-K9a">
-                                <rect key="frame" x="60" y="207" width="255" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n4J-v1-K9a">
+                                <rect key="frame" x="60" y="134" width="255" height="50"/>
                                 <color key="backgroundColor" red="0.25768141779999998" green="0.82456587960000005" blue="0.4354100695" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0Vv-1x-Bn8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="show(似微信无标题)">
+                                <state key="normal" title="似微信无标题">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -59,14 +58,14 @@
                                     <action selector="showWechatActionSheet:" destination="Mg5-44-DqH" eventType="touchUpInside" id="gXU-id-raV"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nq5-NJ-GfT">
-                                <rect key="frame" x="60" y="292" width="255" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nq5-NJ-GfT">
+                                <rect key="frame" x="60" y="204" width="255" height="50"/>
                                 <color key="backgroundColor" red="0.99960273499999996" green="0.65419316289999996" blue="0.085991822179999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="x3y-hR-VCE"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="show(无标题无取消)">
+                                <state key="normal" title="无标题无取消">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -78,14 +77,14 @@
                                     <action selector="showNoTitleActionSheet:" destination="Mg5-44-DqH" eventType="touchUpInside" id="h1t-xE-g7w"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVE-ka-Jpv">
-                                <rect key="frame" x="60" y="374" width="255" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dVE-ka-Jpv">
+                                <rect key="frame" x="60" y="274" width="255" height="50"/>
                                 <color key="backgroundColor" red="0.31764705879999999" green="0.69019607839999997" blue="0.83921568629999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="H0J-eA-EoM"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="show(有标题无取消)">
+                                <state key="normal" title="有标题无取消">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -97,14 +96,14 @@
                                     <action selector="showNoCancelActionSheet:" destination="Mg5-44-DqH" eventType="touchUpInside" id="RCw-Fl-Uiz"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmV-jp-Ffx">
-                                <rect key="frame" x="60" y="464" width="255" height="50"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmV-jp-Ffx">
+                                <rect key="frame" x="60" y="344" width="255" height="50"/>
                                 <color key="backgroundColor" red="1" green="0.046606875860000001" blue="0.045802324120000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="VMI-le-Xap"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="show(定义标题颜色)">
+                                <state key="normal" title="定义标题颜色">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
@@ -116,23 +115,67 @@
                                     <action selector="showColorTitleActionSheet:" destination="Mg5-44-DqH" eventType="touchUpInside" id="gFk-7d-Fc1"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u8d-2H-q24">
+                                <rect key="frame" x="60" y="414" width="255" height="50"/>
+                                <color key="backgroundColor" systemColor="systemPurpleColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="fon-0g-Rc2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="数据过多- 滚动处理">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showManyTitleActionSheet:" destination="Mg5-44-DqH" eventType="touchUpInside" id="bDd-Ce-7R4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kBB-hH-2cG">
+                                <rect key="frame" x="60" y="484" width="255" height="50"/>
+                                <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YqU-DK-sUO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="顶部圆角">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="4"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="showTopCornerActionSheet:" destination="Mg5-44-DqH" eventType="touchUpInside" id="Ebm-QS-IhG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="bmV-jp-Ffx" secondAttribute="trailing" constant="60" id="1G9-cg-ZUO"/>
-                            <constraint firstItem="bmV-jp-Ffx" firstAttribute="top" secondItem="dVE-ka-Jpv" secondAttribute="bottom" constant="40" id="8XO-Iz-k5Q"/>
+                            <constraint firstItem="u8d-2H-q24" firstAttribute="leading" secondItem="bmV-jp-Ffx" secondAttribute="leading" id="2lj-c1-Ez3"/>
+                            <constraint firstItem="kBB-hH-2cG" firstAttribute="leading" secondItem="u8d-2H-q24" secondAttribute="leading" id="3bN-bA-pHg"/>
+                            <constraint firstItem="bmV-jp-Ffx" firstAttribute="top" secondItem="dVE-ka-Jpv" secondAttribute="bottom" constant="20" id="8XO-Iz-k5Q"/>
                             <constraint firstItem="n4J-v1-K9a" firstAttribute="leading" secondItem="Co8-Rl-oD9" secondAttribute="leading" constant="60" id="Cjj-nI-Li6"/>
+                            <constraint firstItem="kBB-hH-2cG" firstAttribute="trailing" secondItem="u8d-2H-q24" secondAttribute="trailing" id="FLp-Sm-wX6"/>
                             <constraint firstItem="Uwf-rG-1t3" firstAttribute="leading" secondItem="Co8-Rl-oD9" secondAttribute="leading" constant="60" id="JJT-ds-icU"/>
-                            <constraint firstItem="n4J-v1-K9a" firstAttribute="top" secondItem="Uwf-rG-1t3" secondAttribute="bottom" constant="33" id="JiN-cC-Yxs"/>
+                            <constraint firstItem="n4J-v1-K9a" firstAttribute="top" secondItem="Uwf-rG-1t3" secondAttribute="bottom" constant="20" id="JiN-cC-Yxs"/>
                             <constraint firstItem="dVE-ka-Jpv" firstAttribute="leading" secondItem="Co8-Rl-oD9" secondAttribute="leading" constant="60" id="Pi3-e1-bhP"/>
                             <constraint firstAttribute="trailing" secondItem="dVE-ka-Jpv" secondAttribute="trailing" constant="60" id="Pvx-mm-p5C"/>
-                            <constraint firstItem="dVE-ka-Jpv" firstAttribute="top" secondItem="Nq5-NJ-GfT" secondAttribute="bottom" constant="32" id="YO9-lb-DT6"/>
+                            <constraint firstItem="u8d-2H-q24" firstAttribute="top" secondItem="bmV-jp-Ffx" secondAttribute="bottom" constant="20" id="SZB-h1-wdi"/>
+                            <constraint firstItem="dVE-ka-Jpv" firstAttribute="top" secondItem="Nq5-NJ-GfT" secondAttribute="bottom" constant="20" id="YO9-lb-DT6"/>
                             <constraint firstItem="Nq5-NJ-GfT" firstAttribute="leading" secondItem="Co8-Rl-oD9" secondAttribute="leading" constant="60" id="Zlq-Ya-ow2"/>
+                            <constraint firstItem="u8d-2H-q24" firstAttribute="trailing" secondItem="bmV-jp-Ffx" secondAttribute="trailing" id="aNH-zr-aM2"/>
                             <constraint firstAttribute="trailing" secondItem="Nq5-NJ-GfT" secondAttribute="trailing" constant="60" id="ihs-5s-hmC"/>
-                            <constraint firstItem="Nq5-NJ-GfT" firstAttribute="top" secondItem="n4J-v1-K9a" secondAttribute="bottom" constant="35" id="jhO-GC-l48"/>
+                            <constraint firstItem="Nq5-NJ-GfT" firstAttribute="top" secondItem="n4J-v1-K9a" secondAttribute="bottom" constant="20" id="jhO-GC-l48"/>
                             <constraint firstAttribute="trailing" secondItem="Uwf-rG-1t3" secondAttribute="trailing" constant="60" id="mVV-Ag-hoq"/>
                             <constraint firstItem="bmV-jp-Ffx" firstAttribute="leading" secondItem="Co8-Rl-oD9" secondAttribute="leading" constant="60" id="qd0-nq-3O9"/>
-                            <constraint firstItem="Uwf-rG-1t3" firstAttribute="top" secondItem="5yS-5j-7mj" secondAttribute="bottom" constant="60" id="vWo-T7-7jg"/>
+                            <constraint firstItem="Uwf-rG-1t3" firstAttribute="top" secondItem="5yS-5j-7mj" secondAttribute="bottom" constant="20" id="vWo-T7-7jg"/>
+                            <constraint firstItem="kBB-hH-2cG" firstAttribute="top" secondItem="u8d-2H-q24" secondAttribute="bottom" constant="20" id="yfc-c0-Vpn"/>
                             <constraint firstAttribute="trailing" secondItem="n4J-v1-K9a" secondAttribute="trailing" constant="60" id="zWL-oE-WeC"/>
                         </constraints>
                     </view>
@@ -148,7 +191,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vz1-cj-glk" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="GgS-om-5Gj">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -161,4 +204,12 @@
             <point key="canvasLocation" x="-279" y="-84"/>
         </scene>
     </scenes>
+    <resources>
+        <systemColor name="systemIndigoColor">
+            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

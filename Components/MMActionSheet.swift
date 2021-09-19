@@ -13,6 +13,8 @@ public class MMActionSheet: UIView {
     public typealias MMSelectionClosure = (_ item: MMButtonItem?) -> Void
     /// SelectionClosure
     public var selectionClosure: MMSelectionClosure?
+    /// top cornerRadius
+    public var topCornerRadius: CGFloat = 0
 
     /// Parmeters
     private var title: MMTitleItem?
@@ -41,7 +43,7 @@ public class MMActionSheet: UIView {
         /// mmdefaultDuration
         static let mmdefaultDuration = 0.25
         /// sheet的最大高度
-        static let mmmaxHeight = mmscreenBounds.height * 0.65
+        static let mmmaxHeight = mmscreenHeight * 0.62
         /// 适配iphoneX
         static let paddng_bottom: CGFloat = MMTools.isIphoneX ? 34.0 : 0.0
     }
@@ -73,7 +75,12 @@ public class MMActionSheet: UIView {
     ///   - buttons: 按钮数组
     ///   - duration: 动画时长
     ///   - cancel: 是否需要取消按钮
-    public convenience init(title: MMTitleItem?, buttons: [MMButtonItem], duration: Double?, cancelButton: MMButtonItem?) {
+    public convenience init(
+        title: MMTitleItem?,
+        buttons: [MMButtonItem],
+        duration: Double?,
+        cancelButton: MMButtonItem?
+    ) {
         /// 半透明背景
         self.init(frame: Constants.mmscreenBounds)
         self.title = title
@@ -107,7 +114,7 @@ public class MMActionSheet: UIView {
         }
 
         let contentHeight = CGFloat(btnCount) * Constants.mmbuttonHeight + CGFloat(btnCount) * Constants.mmdivideLineHeight
-        let height = min(contentHeight, Constants.mmmaxHeight)
+        let height = min(contentHeight, Constants.mmmaxHeight - tHeight - cancelHeight)
 
         scrollView.frame = CGRect(x: 0, y: tHeight, width: Constants.mmscreenWidth, height: height)
         actionSheetView.addSubview(scrollView)
@@ -143,6 +150,7 @@ public class MMActionSheet: UIView {
             titlelabel.textAlignment = title!.textAlignment!
             titlelabel.textColor = title!.textColor
             titlelabel.font = title!.textFont
+            titlelabel.backgroundColor = title!.backgroundColor?.rawValue
             actionSheetView.addSubview(titlelabel)
         }
     }
@@ -195,12 +203,22 @@ public class MMActionSheet: UIView {
             actionSheetView.addSubview(button)
         }
     }
+    
+    private func updateTopCornerMask() {
+        guard topCornerRadius > 0 else { return }
+        let shape = CAShapeLayer()
+        let path = UIBezierPath(roundedRect: actionSheetView.bounds, byRoundingCorners: [.topLeft, .topRight], cornerRadii: CGSize(width: topCornerRadius, height: topCornerRadius))
+        shape.path = path.cgPath
+        shape.frame = actionSheetView.bounds
+        actionSheetView.layer.mask = shape
+    }
 
     /// 修改样式
     override public func layoutSubviews() {
         super.layoutSubviews()
-        backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
-        actionSheetView.backgroundColor = actionSheetViewBackgroundColor
+        
+        /// 顶部圆角
+        updateTopCornerMask()
     }
 }
 
@@ -226,22 +244,21 @@ extension MMActionSheet {
 extension MMActionSheet {
     /// 显示
     public func present() {
-        UIView.animate(withDuration: 0.1, animations: { [self] in
-            if #available(iOS 13.0, *) {
-                if let keyWindow = UIApplication.shared.windows.filter({ $0.isKeyWindow }).first {
-                    keyWindow.addSubview(self)
-                }
-            } else {
-                UIApplication.shared.keyWindow?.addSubview(self)
+        if #available(iOS 13.0, *) {
+            if let keyWindow = UIApplication.shared.windows.filter({ $0.isKeyWindow }).first {
+                keyWindow.addSubview(self)
             }
+        } else {
+            UIApplication.shared.keyWindow?.addSubview(self)
+        }
+        
+        UIView.animate(withDuration: 0.1, animations: { [self] in
             /// backgroundColor
             self.actionSheetView.backgroundColor = actionSheetViewBackgroundColor
         }) { (_: Bool) in
             UIView.animate(withDuration: self.duration!) {
                 self.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.3)
-                var tempFrame = self.actionSheetView.frame
-                tempFrame.origin.y = Constants.mmscreenHeight - tempFrame.size.height
-                self.actionSheetView.frame = tempFrame
+                self.actionSheetView.transform = CGAffineTransform(translationX: 0, y: -self.actionSheetView.frame.size.height)
             }
         }
     }
@@ -250,9 +267,7 @@ extension MMActionSheet {
     func dismiss() {
         UIView.animate(withDuration: duration!, animations: {
             self.backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
-            var tempFrame = self.actionSheetView.frame
-            tempFrame.origin.y = Constants.mmscreenHeight
-            self.actionSheetView.frame = tempFrame
+            self.actionSheetView.transform = .identity
         }) { (_: Bool) in
             self.removeFromSuperview()
         }
