@@ -146,7 +146,7 @@ class ExampleActionSheetVC: UIViewController {
             MMButtonItem(title: "定位到聊天位置", titleColor: .default, buttonType: .default(index: 5))
         ]
 
-        let titleItem = MMTitleItem(title: "多个选项滚动列表", titleColor: .purple, backgroundColor: .custom(MMTools.DefaultColor.normalColor))
+        let titleItem = MMTitleItem(title: "多个选项滚动列表", titleColor: .purple)
         let cancelButton = MMButtonItem(title: "取消", titleColor: .danger, buttonType: .cancel)
         let mmActionSheet1 = MMActionSheet(title: titleItem, buttons: buttons, duration: nil, cancelButton: cancelButton)
         mmActionSheet1.selectionClosure = { item in
