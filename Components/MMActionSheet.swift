@@ -41,7 +41,7 @@ public class MMActionSheet: UIView {
         /// mmdefaultDuration
         static let mmdefaultDuration = 0.25
         /// sheet的最大高度
-        static let mmmaxHeight = mmscreenBounds.height / 2
+        static let mmmaxHeight = mmscreenBounds.height * 0.65
         /// 适配iphoneX
         static let paddng_bottom: CGFloat = MMTools.isIphoneX ? 34.0 : 0.0
     }
@@ -106,13 +106,13 @@ public class MMActionSheet: UIView {
             cancelHeight = Constants.mmbuttonHeight + Constants.mmbtnPadding
         }
 
-        let itemHeight = CGFloat(btnCount) * Constants.mmbuttonHeight + CGFloat(btnCount) * Constants.mmdivideLineHeight + Constants.paddng_bottom + tHeight
-        let height = min(itemHeight, Constants.mmmaxHeight)
+        let contentHeight = CGFloat(btnCount) * Constants.mmbuttonHeight + CGFloat(btnCount) * Constants.mmdivideLineHeight
+        let height = min(contentHeight, Constants.mmmaxHeight)
 
-        scrollView.frame = CGRect(x: 0, y: 0, width: Constants.mmscreenWidth, height: height)
+        scrollView.frame = CGRect(x: 0, y: tHeight, width: Constants.mmscreenWidth, height: height)
         actionSheetView.addSubview(scrollView)
 
-        actionSheetHeight = height + cancelHeight
+        actionSheetHeight = tHeight + height + cancelHeight + Constants.paddng_bottom
 
         let aFrame: CGRect = CGRect(x: 0, y: Constants.mmscreenHeight, width: Constants.mmscreenWidth, height: actionSheetHeight)
         actionSheetView.frame = aFrame
@@ -149,26 +149,21 @@ public class MMActionSheet: UIView {
 
     /// Buttons
     private func setButtons() {
-        let itemHeight = CGFloat(buttons.count) * Constants.mmbuttonHeight + CGFloat(buttons.count) * Constants.mmdivideLineHeight + Constants.paddng_bottom + (title != nil ? Constants.mmtitleHeight : 0)
-        let view = UIView(frame: CGRect(x: 0, y: 0, width: Constants.mmscreenWidth, height: itemHeight))
+        let contentHeight = CGFloat(buttons.count) * Constants.mmbuttonHeight + CGFloat(buttons.count) * Constants.mmdivideLineHeight
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: Constants.mmscreenWidth, height: contentHeight))
+        view.clipsToBounds = true
         scrollView.addSubview(view)
-        scrollView.contentSize = CGSize(width: Constants.mmscreenWidth, height: itemHeight)
+        scrollView.contentSize = CGSize(width: Constants.mmscreenWidth, height: contentHeight)
 
         let buttonsCount = buttons.count
         for index in 0 ..< buttonsCount {
-            let btn = buttons[index]
-
-            var tHeight: CGFloat = 0.0
-            if title != nil {
-                tHeight = Constants.mmtitleHeight
-            }
-
-            let origin_y = tHeight + Constants.mmbuttonHeight * CGFloat(index) + Constants.mmdivideLineHeight * CGFloat(index)
+            let item = buttons[index]
+            let origin_y = Constants.mmbuttonHeight * CGFloat(index) + Constants.mmdivideLineHeight * CGFloat(index)
 
             let button = MMButton(type: .custom)
             button.frame = CGRect(x: 0.0, y: origin_y, width: Constants.mmscreenWidth, height: Constants.mmbuttonHeight)
             /// Button Item
-            button.item = btn
+            button.item = item
             button.addTarget(self, action: #selector(actionClick), for: .touchUpInside)
             view.addSubview(button)
         }
@@ -177,7 +172,7 @@ public class MMActionSheet: UIView {
     /// ExtraView
     private func setExtraView() {
         guard MMTools.isIphoneX else { return }
-        let frame = CGRect(x: 0, y: Int(self.actionSheetView.bounds.size.height - Constants.mmbuttonHeight - Constants.paddng_bottom + Constants.mmbuttonHeight), width: Int(Constants.mmscreenWidth), height: Int(Constants.paddng_bottom) + 10)
+        let frame = CGRect(x: 0, y: self.actionSheetView.bounds.size.height - Constants.paddng_bottom, width: Constants.mmscreenWidth, height: Constants.paddng_bottom)
         let extraView = UIView()
         extraView.frame = frame
         if cancelButton != nil {
@@ -194,14 +189,24 @@ public class MMActionSheet: UIView {
         /// 如果取消为ture则添加取消按钮
         if cancelButton != nil {
             let button = MMButton(type: .custom)
-            button.frame = CGRect(x: 0, y: Int(actionSheetView.bounds.size.height - Constants.mmbuttonHeight - Constants.paddng_bottom), width: Int(Constants.mmscreenWidth), height: Int(Constants.mmbuttonHeight))
+            button.frame = CGRect(x: 0, y: actionSheetView.bounds.size.height - Constants.mmbuttonHeight - Constants.paddng_bottom, width: Constants.mmscreenWidth, height: Constants.mmbuttonHeight)
             button.item = cancelButton
             button.addTarget(self, action: #selector(actionClick), for: .touchUpInside)
             actionSheetView.addSubview(button)
         }
     }
 
-    /// Action
+    /// 修改样式
+    override public func layoutSubviews() {
+        super.layoutSubviews()
+        backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
+        actionSheetView.backgroundColor = actionSheetViewBackgroundColor
+    }
+}
+
+//MARK: Event
+extension MMActionSheet {
+    /// items action
     @objc func actionClick(button: MMButton) {
         dismiss()
         guard let item = button.item else { return }
@@ -209,12 +214,16 @@ public class MMActionSheet: UIView {
         selectionClosure?(item)
     }
 
+    //tap action
     @objc func singleTapDismiss() {
         dismiss()
         /// Callback
         selectionClosure?(nil)
     }
+}
 
+//MARK: present, dismiss
+extension MMActionSheet {
     /// 显示
     public func present() {
         UIView.animate(withDuration: 0.1, animations: { [self] in
@@ -248,17 +257,10 @@ public class MMActionSheet: UIView {
             self.removeFromSuperview()
         }
     }
-
-    /// 修改样式
-    override public func layoutSubviews() {
-        super.layoutSubviews()
-        backgroundColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
-        actionSheetView.backgroundColor = actionSheetViewBackgroundColor
-    }
 }
 
-// MARK: - UIGestureRecognizerDelegate
 
+// MARK: - UIGestureRecognizerDelegate
 extension MMActionSheet: UIGestureRecognizerDelegate {
     public func gestureRecognizer(_ gestureRecognizer: UIGestureRecognizer, shouldReceive touch: UITouch) -> Bool {
         guard touch.view == actionSheetView else { return true }

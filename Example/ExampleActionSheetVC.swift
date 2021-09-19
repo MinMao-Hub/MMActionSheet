@@ -16,22 +16,6 @@ class ExampleActionSheetVC: UIViewController {
     }
 
     @IBAction func presentActionSheet(_ sender: Any) {
-        /*
-         let buttons = [
-             [
-                 "title": "拍照",
-                 "handler": "camera",
-             ],[
-                 "title": "相册",
-                 "handler": "photos",
-                 "type": "default"
-             ]
-         ]
-         let cancelBtn = [
-             "title": "取消",
-         ]
-         */
-
         let buttons = [
             MMButtonItem(title: "拍照", titleColor: .default, buttonType: .default(index: 0), backgroudImageColorNormal: .custom(.purple)),
             MMButtonItem(title: "相册", titleColor: .default, buttonType: .default(index: 1)),
@@ -56,36 +40,6 @@ class ExampleActionSheetVC: UIViewController {
     }
 
     @IBAction func showWechatActionSheet(_ sender: Any) {
-        /*
-         let buttons = [
-             [
-                 "title": "发送给朋友",
-                 "handler": "sendToFriend",
-             ],[
-                 "title": "收藏",
-                 "handler": "collection",
-                 "type": "default"
-             ],[
-                 "title": "保存图片",
-                 "handler": "save",
-             ],[
-                 "title": "打开",
-                 "handler": "open",
-             ],[
-                 "title": "编辑",
-                 "handler": "edit",
-             ],[
-                 "title": "定位到聊天位置",
-                 "handler": "location",
-             ]
-         ]
-
-         let cancelBtn = [
-             "title": "取消",
-             "handler": "cancel",
-         ]
-         */
-
         let buttons = [
             MMButtonItem(title: "发送给朋友", titleColor: .default, buttonType: .default(index: 0)),
             MMButtonItem(title: "收藏", titleColor: .default, buttonType: .default(index: 1)),
@@ -93,11 +47,14 @@ class ExampleActionSheetVC: UIViewController {
             MMButtonItem(title: "打开", titleColor: .default, buttonType: .default(index: 3)),
             MMButtonItem(title: "编辑", titleColor: .default, buttonType: .default(index: 4)),
             MMButtonItem(title: "定位到聊天位置", titleColor: .default, buttonType: .default(index: 5)),
+            MMButtonItem(title: "定位到聊天位置", titleColor: .default, buttonType: .default(index: 6)),
+            MMButtonItem(title: "定位到聊天位置", titleColor: .default, buttonType: .default(index: 7)),
+            MMButtonItem(title: "定位到聊天位置", titleColor: .default, buttonType: .default(index: 8))
         ]
 
         let cancelButton = MMButtonItem(title: "取消", titleColor: .danger, buttonType: .cancel)
-
-        let mmActionSheet1 = MMActionSheet(title: nil, buttons: buttons, duration: nil, cancelButton: cancelButton)
+        let titleItem = MMTitleItem(title: "Text", titleColor: .purple)
+        let mmActionSheet1 = MMActionSheet(title: titleItem, buttons: buttons, duration: nil, cancelButton: cancelButton)
         mmActionSheet1.selectionClosure = { item in
             if let currentItem = item, let type = currentItem.buttonType {
                 switch type {
@@ -112,24 +69,6 @@ class ExampleActionSheetVC: UIViewController {
     }
 
     @IBAction func showNoTitleActionSheet(_ sender: Any) {
-        /*
-         let buttons = [
-             [
-                 "title": "微信",
-                 "handler": "1",
-             ],[
-                 "title": "QQ",
-                 "handler": "2",
-             ],[
-                 "title": "支付宝",
-                 "handler": "3",
-             ],[
-                 "title": "新浪微博",
-                 "handler": "4",
-             ]
-         ]
-         */
-
         let buttons = [
             MMButtonItem(title: "微信", titleColor: .default, buttonType: .default(index: 0)),
             MMButtonItem(title: "QQ", titleColor: .default, buttonType: .default(index: 1)),
