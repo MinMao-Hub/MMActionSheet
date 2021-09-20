@@ -164,13 +164,13 @@ class ExampleActionSheetVC: UIViewController {
     
     @IBAction func showTopCornerActionSheet(_ sender: Any) {
         let buttons = [
-            MMButtonItem(title: "查看", titleColor: .custom(.red), buttonType: .default(index: 0)),
-            MMButtonItem(title: "编辑", titleColor: .custom(.green), buttonType: .default(index: 1)),
-            MMButtonItem(title: "删除", titleColor: .custom(.brown), buttonType: .default(index: 2))
+            MMButtonItem(title: "查看", buttonType: .default(index: 0)),
+            MMButtonItem(title: "编辑", buttonType: .default(index: 1)),
+            MMButtonItem(title: "删除", buttonType: .default(index: 2))
         ]
 
-        let titleItem = MMTitleItem(title: "文件管理", titleColor: .orange, titleFont: .systemFont(ofSize: 18.0), backgroundColor: .custom(MMTools.DefaultColor.normalColor))
-        let cancelButton = MMButtonItem(title: "返回", titleColor: .custom(.orange), buttonType: .cancel)
+        let titleItem = MMTitleItem(title: "文件管理", titleColor: nil, titleFont: .systemFont(ofSize: 18.0), backgroundColor: .custom(MMTools.DefaultColor.normalColor))
+        let cancelButton = MMButtonItem(title: "返回", buttonType: .cancel)
         
         let mmActionSheet1 = MMActionSheet(title: titleItem, buttons: buttons, duration: nil, cancelButton: cancelButton)
         mmActionSheet1.topCornerRadius = 20
