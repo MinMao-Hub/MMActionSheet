@@ -1,5 +1,4 @@
-![](gifs/mmactionsheet.png)
-
+<img src="gifs/mmactionsheet.png" width=100%></img>
 
 [![Building](https://img.shields.io/wercker/ci/wercker/docs.svg?style=flat)](https://cocoapods.org/pods/MMActionSheet) 
 [![Language](https://img.shields.io/badge/language-Swift-orange.svg?style=flat)](https://github.com/MinMao-Hub/MMActionSheet)
@@ -24,7 +23,7 @@ MMActionSheet is an simple pop-up selection box(ActionSheet) written in pure Swi
 
 #### Install with  Cocoapods
 
-* `pod 'MMActionSheet', '~> 1.1'`
+* `pod 'MMActionSheet', '~> 1.0.4'`
 * `import MMActionSheet `  in you code
 
 
