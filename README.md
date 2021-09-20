@@ -1,5 +1,4 @@
-
-## MMActionSheet
+![](gifs/mmactionsheet.png)
 
 
 [![Building](https://img.shields.io/wercker/ci/wercker/docs.svg?style=flat)](https://cocoapods.org/pods/MMActionSheet) 
@@ -16,68 +15,70 @@ MMActionSheet is an simple pop-up selection box(ActionSheet) written in pure Swi
 
 ### Rquirements
 
-* iOS 8.0+
-* Xcode 9 (swift 4)
-* Xcode 8 (swift 3) 
-	* If you want to run demo in swift3, please switch branch to swift3.0
+* iOS 9.0+
+* Xcode 12 (swift 5)
+
 
 ### Installation
 
 
 #### Install with  Cocoapods
 
-* `pod 'MMActionSheet', '~> 1.0'`
+* `pod 'MMActionSheet', '~> 1.1'`
 * `import MMActionSheet `  in you code
 
 
 #### Copy code into project
 
-[克隆代码](https://github.com/MinMao-Hub/MMActionSheet.git)，然后将components文件夹下面的两个文件 `MMActionSheet.swift` 和 `MMButton.swift`加入到你的项目中即可。	
+[克隆代码](https://github.com/MinMao-Hub/MMActionSheet.git)，然后将components文件夹下面的所有文件加入到你的项目中即可。	
 
-Just clone and add `MMActionSheet.swift`, `MMButton.swift` to your project.
+Just clone and add components dir to your project.
+
+### Func
+
+1. ***Has `Cancel` buttons and `Title`【有标题和取消按钮】***
+2. ***Has a `Cancel` button but no `Title`【无标题有取消按钮】***
+3. ***No `Cancel` button and no `Title`【无标题无取消按钮】*** 
+4. ***Has a `Title` but no `Cancel` button【有标题无取消按钮】***
+5. ***Customize title text color, title background color, etc【自定义文本颜色、正常背景色、选中背景色等】*** 
+6. ***Set top CornerRadius【设置顶部圆角】*** 
 
 ### Example
 
-> 1. ***has "Cancel" buttons and titles【有标题有取消按钮】***
-> 
-> 2. ***has a "Cancel" button but no title【无标题有取消按钮(类似于微信)】***
-> 
-> 3. ***no "Cancel" button and no title【无标题无取消按钮】***
-> 
-> 4. ***has a title but no "Cancel" button【有标题无取消按钮】***
-> 5. ***Defines the title color【定义标题颜色】*** 
->>目前仅支持三种(`default`,`blue`,`danger`)
+|描述|预览|
+|:--:|:--:|
+|Has `Cancel` buttons and `Title`<br>【有标题和取消按钮】|![](gifs/mmactionsheet_1.gif)|
+|Has a `Cancel` button but no `Title`<br>【无标题有取消按钮】|![](gifs/mmactionsheet_2.gif)|
+|No `Cancel` button and no `Title`<br>【无标题无取消按钮】|![](gifs/mmactionsheet_3.gif)|
+|Has a `Title` but no `Cancel` button<br>【有标题无取消按钮】|![](gifs/mmactionsheet_4.gif)|
+|Customize text color<br>【自定义文本颜色】|![](gifs/mmactionsheet_5.gif)|
+|Customize title background color, etc<br>【自定义背景色、选中背景色等】|![](gifs/mmactionsheet_6.gif)|
+|Multi data scrolling<br>【多数据滚动】|![](gifs/mmactionsheet_7.gif)|
+|Set top CornerRadius<br>【设置顶部圆角】|![](gifs/mmactionsheet_8.gif)|
 
-<div>
-	<img src="gifs/mmactionsheet_1.gif" width="25%" />
-	<img src="gifs/mmactionsheet_2.gif" width="25%" style="margin-left:20px" />
-	<img src="gifs/mmactionsheet_3.gif" width="25%" style="margin-left:20px" />
-</div>
-<div style="margin-top: 30px">
-	<img src="gifs/mmactionsheet_4.gif" width="25%" />
-	<img src="gifs/mmactionsheet_5.gif" width="25%" style="margin-left:20px" />
-</div>
 
 
 ### Usage
 
 ```swift
 let buttons = [
-    [
-        "title": "拍照",
-        "handler": "camera",
-    ],[
-        "title": "相册",
-        "handler": "photos",
-        "type": "default"
-    ]
-] 
-let cancelBtn = [
-    "title": "取消",
+	MMButtonItem(title: "拍照", titleColor: .default, buttonType: .default(index: 0)),
+	MMButtonItem(title: "相册", titleColor: .default, buttonType: .default(index: 1)),
 ]
-let mmActionSheet = MMActionSheet.init(title: "请选择照片", buttons: buttons, duration: nil, cancelBtn: cancelBtn)
-mmActionSheet.callBack = { (handler) ->() in
-    print(handler)
+
+let titleItem = MMTitleItem(title: "请选择照片", titleColor: .red)
+let cancelButton = MMButtonItem(title: "取消", titleColor: .default, buttonType: .cancel)
+
+let mmActionSheet = MMActionSheet(title: titleItem, buttons: buttons, duration: nil, cancelButton: cancelButton)
+mmActionSheet.selectionClosure = { item in
+    if let currentItem = item, let type = currentItem.buttonType {
+        switch type {
+        case let .default(index):
+            print("== default index \(index) ==")
+        case .cancel:
+            print("cancel")
+        }
+    }
 }
 mmActionSheet.present()
 
@@ -87,34 +88,44 @@ mmActionSheet.present()
 
 * create actionsheet && init 【创建并初始化】
 
-`MMActionSheet.init(title: "请选择照片", buttons: buttons, duration: nil, cancelBtn: cancelBtn)`
+`MMActionSheet(title: titleItem, buttons: buttons, duration: nil, cancelButton: cancelButton)`
 
 * argument【参数描述】
  
-	* `title` 头部标题
-	* `buttons` 事件按钮数组，类型为`Array<Dictionary<String, String>>`，里面包含每一个按钮的具体属性：
+	* `title` 头部标题,类型为 `MMTitleItem `
+	* `buttons` 事件按钮数组，类型为`Array<MMButtonItem>`，里面包含每一个按钮的具体属性：
 		
 		```
-		[
-	        "title": "拍照",
-	        "handler": "camera",
-	        "type": "default"
-	    ]
+		public var title: String?
+		public var titleColor: MMButtonTitleColor? = .default
+		public var titleFont: UIFont? = .systemFont(ofSize: 16.0)
+		public var buttonType: MMButtonType?
+		public var backgroudImageColorNormal: MMButtonTitleColor? = .custom(MMTools.DefaultColor.normalColor)
+		public var backgroudImageColorHighlight: MMButtonTitleColor? = .custom(MMTools.DefaultColor.highlightColor)
 		```
 		* `title`   按钮标题
-		* `handler` 按钮事件唯一标识，回调的时候根据该值区别处理事件
-		* `type`    按钮类型（展示不同的标题颜色）【`default`,`blue`,`danger`】
+		* `titleColor ` 按钮颜色
+		* `titleFont ` 按钮字体
+		* `type`    按钮类型（展示不同的标题颜色）【枚举类型 - `default`,`blue`,`danger`, `custom`】
+		* `backgroudImageColorNormal`   正常背景色
+		* `backgroudImageColorHighlight`   选中背景色
 	* `duration ` 动画时长
-	* `cancelBtn `   取消按钮属性，属性跟上述buttons内部button属性一致；若设置为`nil`则无该按钮, 必须要设置某一个属性，默认值为`[
-    "title": "取消", "handler": "cancel","type": "default"]`
+	* `cancelBtn `  取消按钮属性，属性跟上述buttons内部button属性一致；若设置为`nil`则不显示该按钮
 * callback【回调】
 
 ```
-mmActionSheet.callBack = { (handler) ->() in
-	print(handler)
+mmActionSheet.selectionClosure = { item in
+	if let currentItem = item, let type = currentItem.buttonType {
+        switch type {
+        case let .default(index):
+            print("== default index \(index) ==")
+        case .cancel:
+            print("cancel")
+        }
+    }
 }
 ```
- `handler` 该handler即为buttons里面button的`handler`，对应的回调过来
+ `item ` 该handler即为buttons里面的`MMButtonItem`，对应的回调过来
 
 * present【弹出actionsheet】
 

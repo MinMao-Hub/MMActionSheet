@@ -21,7 +21,7 @@ public struct MMTitleItem {
     public var backgroundColor: MMButtonTitleColor? = .custom(UIColor.clear)
 
     public init(title: String?,
-                titleColor: UIColor?,
+                titleColor: UIColor? = MMButtonTitleColor.default.rawValue,
                 titleFont: UIFont? = .systemFont(ofSize: 14.0),
                 textAlignment: NSTextAlignment? = .center,
                 backgroundColor: MMButtonTitleColor? = .custom(UIColor.clear)
