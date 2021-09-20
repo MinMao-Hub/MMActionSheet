@@ -25,7 +25,7 @@ MMActionSheet is an simple pop-up selection box(ActionSheet) written in pure Swi
 To install with Swift Package Manager, add this package to your project’s 'Swift Packages' section. Or add the following line to your Package.swift:
 
 ```
- .package(url: "https://github.com/MinMao-Hub/MMActionSheet.git", from: "2.0")
+ .package(url: "https://github.com/MinMao-Hub/MMActionSheet.git", from: "2.0.0")
 ```
 
 
