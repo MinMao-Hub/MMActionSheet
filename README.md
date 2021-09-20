@@ -23,11 +23,20 @@ MMActionSheet is an simple pop-up selection box(ActionSheet) written in pure Swi
 
 #### Install with  Cocoapods
 
-* `pod 'MMActionSheet', '~> 1.0'`
-* `import MMActionSheet `  in you code
+* Add line to your Podfile
+	```
+	target 'MyApp' do
+	  pod 'MMActionSheet', '~> 1.0'
+	end
+	```
+* Execute command：  
+	* `pod repo update master`
+	* `pod install` 
+* Import  MMActionSheet in you code
+	*  `import MMActionSheet`
 
 
-#### Copy code into project
+#### Manual import
 
 [克隆代码](https://github.com/MinMao-Hub/MMActionSheet.git)，然后将components文件夹下面的所有文件加入到你的项目中即可。	
 
