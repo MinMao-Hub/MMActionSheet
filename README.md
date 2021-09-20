@@ -15,18 +15,30 @@ MMActionSheet is an simple pop-up selection box(ActionSheet) written in pure Swi
 ### Rquirements
 
 * iOS 8.0+
-* Xcode 11+ (swift 4.0、swift 4.2、swift5.0)
+* swift 4.0+
 
 
 ### Installation
 
+#### Swift Package Manager
+
+To install with Swift Package Manager, add this package to your project’s 'Swift Packages' section. Or add the following line to your Package.swift:
+
+```
+ .package(url: "https://github.com/MinMao-Hub/MMActionSheet.git", from: "2.0")
+```
+
 
 #### Install with  Cocoapods
 
-* Add line to your Podfile
+* To install MMActionSheet using CocoaPods, integrate it in your existing Podfile, or create a new Podfile:
+
 	```
+	platform :ios, '8.0'
+	use_frameworks!
+	
 	target 'MyApp' do
-	  pod 'MMActionSheet', '~> 1.0'
+	  pod 'MMActionSheet', '~> 2.0'
 	end
 	```
 * Execute command：  
@@ -38,13 +50,11 @@ MMActionSheet is an simple pop-up selection box(ActionSheet) written in pure Swi
 
 #### Manual import
 
-[克隆代码](https://github.com/MinMao-Hub/MMActionSheet.git)，然后将components文件夹下面的所有文件加入到你的项目中即可。	
-
-Just clone and add components dir to your project.
+Just [clone](https://github.com/MinMao-Hub/MMActionSheet.git) and add components dir to your project.
 
 ### Example
 
-|描述|预览|
+|desc|preview|
 |:--:|:--:|
 |Has `Cancel` buttons and `Title`<br>【有标题和取消按钮】|![](gifs/mmactionsheet_1.gif)|
 |Has a `Cancel` button but no `Title`<br>【无标题有取消按钮】|![](gifs/mmactionsheet_2.gif)|

@@ -7,21 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		195CE25F26F8809B0025DD83 /* MMButtonTitleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195CE25826F8809B0025DD83 /* MMButtonTitleColor.swift */; };
+		195CE26026F8809B0025DD83 /* MMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195CE25926F8809B0025DD83 /* MMButton.swift */; };
+		195CE26126F8809B0025DD83 /* MMButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195CE25A26F8809B0025DD83 /* MMButtonItem.swift */; };
+		195CE26226F8809B0025DD83 /* MMButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195CE25B26F8809B0025DD83 /* MMButtonType.swift */; };
+		195CE26326F8809B0025DD83 /* MMTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195CE25C26F8809B0025DD83 /* MMTools.swift */; };
+		195CE26426F8809B0025DD83 /* MMActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195CE25D26F8809B0025DD83 /* MMActionSheet.swift */; };
+		195CE26526F8809B0025DD83 /* MMTitleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 195CE25E26F8809B0025DD83 /* MMTitleItem.swift */; };
 		1986B1601F8C3F2B00CBC6AE /* Example.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1986B15F1F8C3F2B00CBC6AE /* Example.storyboard */; };
 		19A84DF81F8AF08400475BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A84DF71F8AF08400475BEB /* AppDelegate.swift */; };
 		19A84DFF1F8AF08400475BEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19A84DFE1F8AF08400475BEB /* Assets.xcassets */; };
 		19A84E021F8AF08400475BEB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19A84E001F8AF08400475BEB /* LaunchScreen.storyboard */; };
 		19C6410E1F8B5B1C005C0E3B /* ExampleActionSheetVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C6410D1F8B5B1C005C0E3B /* ExampleActionSheetVC.swift */; };
-		19F72E811F8AF475001B1EF7 /* MMActionSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F72E801F8AF475001B1EF7 /* MMActionSheet.swift */; };
-		19F72E851F8AF4B8001B1EF7 /* MMButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19F72E841F8AF4B8001B1EF7 /* MMButton.swift */; };
-		29DAC35426EF4CA2003814EF /* MMTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DAC35326EF4CA2003814EF /* MMTools.swift */; };
-		29DAC35626EF53C5003814EF /* MMButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DAC35526EF53C5003814EF /* MMButtonItem.swift */; };
-		29DAC35826EF5803003814EF /* MMButtonTitleColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DAC35726EF5803003814EF /* MMButtonTitleColor.swift */; };
-		29DAC35A26EF5CA3003814EF /* MMButtonType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DAC35926EF5CA3003814EF /* MMButtonType.swift */; };
-		29DAC35C26F05207003814EF /* MMTitleItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29DAC35B26F05207003814EF /* MMTitleItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		195CE25826F8809B0025DD83 /* MMButtonTitleColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMButtonTitleColor.swift; sourceTree = "<group>"; };
+		195CE25926F8809B0025DD83 /* MMButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMButton.swift; sourceTree = "<group>"; };
+		195CE25A26F8809B0025DD83 /* MMButtonItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMButtonItem.swift; sourceTree = "<group>"; };
+		195CE25B26F8809B0025DD83 /* MMButtonType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMButtonType.swift; sourceTree = "<group>"; };
+		195CE25C26F8809B0025DD83 /* MMTools.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMTools.swift; sourceTree = "<group>"; };
+		195CE25D26F8809B0025DD83 /* MMActionSheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMActionSheet.swift; sourceTree = "<group>"; };
+		195CE25E26F8809B0025DD83 /* MMTitleItem.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MMTitleItem.swift; sourceTree = "<group>"; };
 		1986B15F1F8C3F2B00CBC6AE /* Example.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Example.storyboard; sourceTree = "<group>"; };
 		19A84DF41F8AF08400475BEB /* swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A84DF71F8AF08400475BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -29,13 +36,6 @@
 		19A84E011F8AF08400475BEB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		19A84E031F8AF08400475BEB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		19C6410D1F8B5B1C005C0E3B /* ExampleActionSheetVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ExampleActionSheetVC.swift; sourceTree = "<group>"; };
-		19F72E801F8AF475001B1EF7 /* MMActionSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMActionSheet.swift; sourceTree = "<group>"; };
-		19F72E841F8AF4B8001B1EF7 /* MMButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMButton.swift; sourceTree = "<group>"; };
-		29DAC35326EF4CA2003814EF /* MMTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMTools.swift; sourceTree = "<group>"; };
-		29DAC35526EF53C5003814EF /* MMButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMButtonItem.swift; sourceTree = "<group>"; };
-		29DAC35726EF5803003814EF /* MMButtonTitleColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMButtonTitleColor.swift; sourceTree = "<group>"; };
-		29DAC35926EF5CA3003814EF /* MMButtonType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMButtonType.swift; sourceTree = "<group>"; };
-		29DAC35B26F05207003814EF /* MMTitleItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMTitleItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,11 +58,33 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
+		195CE25626F8809B0025DD83 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				195CE25726F8809B0025DD83 /* MMActionSheet */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		195CE25726F8809B0025DD83 /* MMActionSheet */ = {
+			isa = PBXGroup;
+			children = (
+				195CE25826F8809B0025DD83 /* MMButtonTitleColor.swift */,
+				195CE25926F8809B0025DD83 /* MMButton.swift */,
+				195CE25A26F8809B0025DD83 /* MMButtonItem.swift */,
+				195CE25B26F8809B0025DD83 /* MMButtonType.swift */,
+				195CE25C26F8809B0025DD83 /* MMTools.swift */,
+				195CE25D26F8809B0025DD83 /* MMActionSheet.swift */,
+				195CE25E26F8809B0025DD83 /* MMTitleItem.swift */,
+			);
+			path = MMActionSheet;
+			sourceTree = "<group>";
+		};
 		19A84DEB1F8AF08400475BEB = {
 			isa = PBXGroup;
 			children = (
 				1900C6BC1F8B0E5000DD81B5 /* Example */,
-				19F72E7F1F8AF42D001B1EF7 /* Components */,
+				195CE25626F8809B0025DD83 /* Sources */,
 				19A84DF61F8AF08400475BEB /* swiftui */,
 				19A84DF51F8AF08400475BEB /* Products */,
 			);
@@ -85,20 +107,6 @@
 				19A84E031F8AF08400475BEB /* Info.plist */,
 			);
 			path = swiftui;
-			sourceTree = "<group>";
-		};
-		19F72E7F1F8AF42D001B1EF7 /* Components */ = {
-			isa = PBXGroup;
-			children = (
-				19F72E801F8AF475001B1EF7 /* MMActionSheet.swift */,
-				19F72E841F8AF4B8001B1EF7 /* MMButton.swift */,
-				29DAC35B26F05207003814EF /* MMTitleItem.swift */,
-				29DAC35526EF53C5003814EF /* MMButtonItem.swift */,
-				29DAC35726EF5803003814EF /* MMButtonTitleColor.swift */,
-				29DAC35926EF5CA3003814EF /* MMButtonType.swift */,
-				29DAC35326EF4CA2003814EF /* MMTools.swift */,
-			);
-			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,15 +183,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19F72E811F8AF475001B1EF7 /* MMActionSheet.swift in Sources */,
-				29DAC35826EF5803003814EF /* MMButtonTitleColor.swift in Sources */,
-				19F72E851F8AF4B8001B1EF7 /* MMButton.swift in Sources */,
+				195CE26026F8809B0025DD83 /* MMButton.swift in Sources */,
+				195CE26226F8809B0025DD83 /* MMButtonType.swift in Sources */,
 				19C6410E1F8B5B1C005C0E3B /* ExampleActionSheetVC.swift in Sources */,
-				29DAC35626EF53C5003814EF /* MMButtonItem.swift in Sources */,
+				195CE25F26F8809B0025DD83 /* MMButtonTitleColor.swift in Sources */,
+				195CE26526F8809B0025DD83 /* MMTitleItem.swift in Sources */,
+				195CE26326F8809B0025DD83 /* MMTools.swift in Sources */,
 				19A84DF81F8AF08400475BEB /* AppDelegate.swift in Sources */,
-				29DAC35426EF4CA2003814EF /* MMTools.swift in Sources */,
-				29DAC35C26F05207003814EF /* MMTitleItem.swift in Sources */,
-				29DAC35A26EF5CA3003814EF /* MMButtonType.swift in Sources */,
+				195CE26426F8809B0025DD83 /* MMActionSheet.swift in Sources */,
+				195CE26126F8809B0025DD83 /* MMButtonItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
