@@ -34,15 +34,6 @@ MMActionSheet is an simple pop-up selection box(ActionSheet) written in pure Swi
 
 Just clone and add components dir to your project.
 
-### Func
-
-1. ***Has `Cancel` buttons and `Title`【有标题和取消按钮】***
-2. ***Has a `Cancel` button but no `Title`【无标题有取消按钮】***
-3. ***No `Cancel` button and no `Title`【无标题无取消按钮】*** 
-4. ***Has a `Title` but no `Cancel` button【有标题无取消按钮】***
-5. ***Customize title text color, title background color, etc【自定义文本颜色、正常背景色、选中背景色等】*** 
-6. ***Set top CornerRadius【设置顶部圆角】*** 
-
 ### Example
 
 |描述|预览|
