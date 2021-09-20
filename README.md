@@ -14,8 +14,8 @@ MMActionSheet is an simple pop-up selection box(ActionSheet) written in pure Swi
 
 ### Rquirements
 
-* iOS 9.0+
-* Xcode 12 (swift 5)
+* iOS 8.0+
+* Xcode 11+ (swift 4.0、swift 4.2、swift5.0)
 
 
 ### Installation

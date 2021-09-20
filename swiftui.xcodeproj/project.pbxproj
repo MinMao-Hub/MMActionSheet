@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		194CBE151F8DBA99002729E2 /* SwiftNotice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 194CBE141F8DB963002729E2 /* SwiftNotice.swift */; };
 		1986B1601F8C3F2B00CBC6AE /* Example.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1986B15F1F8C3F2B00CBC6AE /* Example.storyboard */; };
 		19A84DF81F8AF08400475BEB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19A84DF71F8AF08400475BEB /* AppDelegate.swift */; };
 		19A84DFF1F8AF08400475BEB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19A84DFE1F8AF08400475BEB /* Assets.xcassets */; };
@@ -23,7 +22,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		194CBE141F8DB963002729E2 /* SwiftNotice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftNotice.swift; sourceTree = "<group>"; };
 		1986B15F1F8C3F2B00CBC6AE /* Example.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Example.storyboard; sourceTree = "<group>"; };
 		19A84DF41F8AF08400475BEB /* swiftui.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swiftui.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19A84DF71F8AF08400475BEB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -60,21 +58,12 @@
 			path = Example;
 			sourceTree = "<group>";
 		};
-		194CBE131F8DB94B002729E2 /* Tools */ = {
-			isa = PBXGroup;
-			children = (
-				194CBE141F8DB963002729E2 /* SwiftNotice.swift */,
-			);
-			path = Tools;
-			sourceTree = "<group>";
-		};
 		19A84DEB1F8AF08400475BEB = {
 			isa = PBXGroup;
 			children = (
 				1900C6BC1F8B0E5000DD81B5 /* Example */,
 				19F72E7F1F8AF42D001B1EF7 /* Components */,
 				19A84DF61F8AF08400475BEB /* swiftui */,
-				194CBE131F8DB94B002729E2 /* Tools */,
 				19A84DF51F8AF08400475BEB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -189,7 +178,6 @@
 				19F72E811F8AF475001B1EF7 /* MMActionSheet.swift in Sources */,
 				29DAC35826EF5803003814EF /* MMButtonTitleColor.swift in Sources */,
 				19F72E851F8AF4B8001B1EF7 /* MMButton.swift in Sources */,
-				194CBE151F8DBA99002729E2 /* SwiftNotice.swift in Sources */,
 				19C6410E1F8B5B1C005C0E3B /* ExampleActionSheetVC.swift in Sources */,
 				29DAC35626EF53C5003814EF /* MMButtonItem.swift in Sources */,
 				19A84DF81F8AF08400475BEB /* AppDelegate.swift in Sources */,
@@ -334,7 +322,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -352,7 +340,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
